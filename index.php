@@ -2,6 +2,9 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
+	<meta name="description" content="Calculo de media e carga horaria para alunos em geral">
+	<meta name="keywords" content="HTML, CSS, PHP, media, faltas, carga horaria, calcular media escolar,calcular carga horaria, calcular media, calcular carga horaria, calcular faltas">
+	<meta name="author" content="Moises Luz">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Media::Calculator</title>
 	<style>
