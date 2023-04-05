@@ -16,7 +16,7 @@
 			height: 100vh;
 			display: grid;
 			place-items: center;
-			background-color: #696969;
+			background-color: whitesmoke;
 		}
 		#container{
 			display: flex;
@@ -46,7 +46,7 @@
 			align-items: center;
 			justify-content: center;
 			width: 80px;
-			top: 10px;
+			top: 5px;
 		}
 		.carga{
 			position: absolute;
@@ -102,7 +102,7 @@
 			position: absolute;
 			bottom: 20px;
 			text-align: center;
-			color: whitesmoke;
+			color: black;
 		}
 	</style>
 </head>
@@ -112,55 +112,30 @@
 			<a href="https://github.com/Moiseslhuz" id="img" target="_blank"><img src="./img/logo.png" alt="Logo Moises" id="img"></a>
 			<div class="carga">
 				<!--coleta de dados via form-->
-				<form action="" method="post">
+				<form action="resultsCarga.php" method="post">
 				
-				<h3>Calcule a Carga Horária</h3>
-				<div class="input">
-					<input type="text" name="nomeAluno" placeholder="Digite seu Nome">
-				</div>
-				<div class="input">
-					<input type="number" name="cargaHoraria" placeholder="Carga Horária">
-				</div>
-				<div class="input">
-					<input type="number" name="taxaAprovacao" placeholder="% para Aprovação">
-				</div>
-				<div class="input">
-					<input type="number" name="faltasAluno" placeholder="Quantidade de Faltas">
-				</div>
+					<h3>Calcule a Carga Horária</h3>
+					<div class="input">
+						<input type="text" name="nomeAluno" placeholder="Digite seu Nome">
+					</div>
+					<div class="input">
+						<input type="number" name="cargaHoraria" placeholder="Carga Horária">
+					</div>
+					<div class="input">
+						<input type="number" name="taxaAprovacao" placeholder="% para Aprovação">
+					</div>
+					<div class="input">
+						<input type="number" name="faltasAluno" placeholder="Quantidade de Faltas">
+					</div>
 			</div>
 			<div class="button">
 				<button type="submit" name="enviar">Enviar</button>
 				<button type="reset">Limpar</button>
 			</div>
 			<a href="index.php" id="menu">Menu</a>
+			</form>			
 		</div>
-	</div>
-			<?php 
-				//se o isset for iniciado via submit enviar
-				if (isset($_POST['enviar'])):
-
-					//trazemos os dados preenchidos via post
-					$nomeAluno = $_POST['nomeAluno'];
-					$cargaHoraria = $_POST['cargaHoraria'];
-					$taxaAprovacao = $_POST['taxaAprovacao'];
-					$faltasAluno = $_POST['faltasAluno'];
-
-					//equação para definir o % de aprovação do usuario de acordo com a carga horaria	
-					$resultsCargaHoraria = ($taxaAprovacao/100) * $cargaHoraria;
-					//equação para definir o resto da carga horaria
-					$restodaCargaHoraria = $cargaHoraria - $resultsCargaHoraria;
-					//equação para definir o % de faltas do aluno 
-					$resultsFaltas = ($faltasAluno / $cargaHoraria) * 100;
-
-					//estrutura de decição e impressão de resultados
-					if($resultsFaltas > $restodaCargaHoraria):
-						echo "<font color='#F5F5F5'>Aluno ".$nomeAluno. " Reprovado por Faltas <br> Percentual de faltas: ". $resultsFaltas. "% <br>" . "Carga Horaria do Curso: ".$cargaHoraria. "% <br>". "Percentual para passar: ".$resultsCargaHoraria. "%</font>";  
-					else:
-						echo "<font color='#F5F5F5'>Aluno ".$nomeAluno. " Aprovado!! <br> Percentual de faltas: ". $resultsFaltas. "% <br>" . "Carga Horaria do Curso: ".$cargaHoraria. "% <br>". "Percentual para passar: ".$resultsCargaHoraria. "%</font>";
-					endif;
-				endif;
-			?>		
-	</form>
+	</div>	
 	<footer>
 		<p>&copy; - 2023 Todos os direitos reservados.</p>
 	</footer>

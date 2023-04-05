@@ -2,6 +2,9 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
+	<meta name="description" content="Calculo de media e carga horaria para alunos em geral">
+	<meta name="keywords" content="HTML, CSS, PHP, media, faltas, carga horaria, calcular media escolar,calcular carga horaria, calcular media, calcular carga horaria, calcular faltas">
+	<meta name="author" content="Moises Luz">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Media::Calculator</title>
 	<style>
@@ -48,99 +51,86 @@
 			width: 80px;
 			top: 5px;
 		}
-		.media{
-			position: absolute;
-			bottom: 100px;
-			display: flex;
-			justify-content: center;
-			align-items: center;						
-		}
-		.media h3{
-			text-align: center;
-			color: #C37712;
-		}		
-		.input{
+		.comments{
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: 2px;
-		}
-		.input input{
-			width: 200px;
-			text-align: left;
-		}
-		.button{
 			position: absolute;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			flex-wrap: wrap;
-			width: 150px;
-			height: 20px;
-			bottom: 75px;	
+			bottom: 40px;
 		}
-		.button button{
-			color: black;
-			border:none;
-			border-radius: 4px;
-			background: #D3D3D3;
-			padding: 5px 10px;
-		}
-		#menu{
-			position: absolute;
-			bottom: 30px;		
+		.comments a{
+			border: none;
+			padding: 1px 5px;
+			border-radius: 4px;			
 			text-decoration: none;
 			color: black;
-			border:none;
-			border-radius: 4px;
 			background: #D3D3D3;
-			padding: 5px 10px;
 		}
-		.button button:hover{background: #C37712; color: whitesmoke;}
-		#menu:hover{background: #C37712; color: whitesmoke;}
+		.comments a:hover{background: #C37712; color: whitesmoke;}
+
+		.media{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}		
+		.media a{
+			position: absolute;
+			align-items: center;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 6px;
+			text-decoration: none;
+			top: 150px;
+			background: #D3D3D3;
+			color: black;			
+		}
+		.cargahoraria{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.cargahoraria a{
+			position: absolute;
+			padding: 10px 20px;
+			border: none;
+			text-decoration: none;
+			border-radius: 6px;
+			bottom: 100px;		
+			background: #D3D3D3;
+			color: black;
+		}
+		.cargahoraria a:hover{background:  #C37712; color: whitesmoke;}
+		.media a:hover{background:  #C37712; color: whitesmoke;}
+		
 		footer{
 			position: absolute;
 			bottom: 20px;
 			text-align: center;
 			color: black;
-		}		
-
+		}
 	</style>
-
 </head>
 <body>
+	<!--Container inicial contendo os links para redirecionamento-->
 	<div id="container">
 		<div class="container-details">
 			<a href="https://github.com/Moiseslhuz" id="img" target="_blank"><img src="./img/logo.png" alt="Logo Moises" id="img"></a>
-		
-			<div class="media">
-				<!-- coleta de dados acumulando na array n[]-->
-				<form action="resultsMedia.php" method="post">
-					<h3>Calcule sua Média</h3>
-					<div class="input">
-						<input type="number" name="n[]" placeholder="Informe a Primeira Nota">
-					</div>
-					<div class="input">
-						<input type="number" name="n[]" placeholder="Informe a Segunda Nota">
-					</div>
-					<div class="input">
-						<input type="number" name="n[]" placeholder="Informe a Terceira Nota">
-					</div>
-					<div class="input">
-						<input type="number" name="n[]" placeholder="Informe a Quarta Nota">
-					</div>
-			</div>	
-			<div class="button">
-				<button type="submit" name="enviar">Enviar</button>
-				<button type="reset">Limpar</button>
-			</div>			
-			<a href="index.php" id="menu">Menu</a>			
-				</form>
-			</div>		
-	</div>	
 	
+			<div class="media">
+				<a href="media.php">Calcule a Média</a>	
+			</div>				
+			<div class="cargahoraria">
+				<a href="cargaHoraria.php">Calcule a Carga Horária</a>				
+			</div>
+				
+			</div>
+			<div class="comments">
+				<a href="https://github.com/Moiseslhuz" target="_blank">My GitHub</a>
+			</div>			
+		</div>
+	</div>
 	<footer>
 		<p>&copy; - 2023 Todos os direitos reservados.</p>
-	</footer>	
+	</footer>
 </body>
 </html>
